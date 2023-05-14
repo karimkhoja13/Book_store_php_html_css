@@ -1,0 +1,57 @@
+<?php
+	// HEAD STARTS
+	include INCLUDE_PATH . 'head.i.php';
+	// HEAD ENDS
+?>
+	<!-- BODY OF THE PAGE BEGINS -->
+	<body>
+		<!-- NAVBAR BEGINS -->
+		<?php
+			include INCLUDE_PATH . 'navbar.i.php';
+		?>
+		<!-- NAVBAR ENDS -->
+		
+	
+		<!--<div class="page-header">
+		<h1>&nbsp;<small>Website for </small></h1>
+		</div>-->
+		
+		<!-- CONTAINER BEGINS -->
+		<!-- CONTENT BEGINS -->
+		<div class="container">
+		
+			<?php
+				($page == '' || $page == 'home' || $page == 'cat') ? print "<div class='row'>" : "";
+			?>
+				<!-- WELCOME MESSAGE BEGINS -->
+				<?php
+					include INCLUDE_PATH . 'categories.i.php';
+				?>
+				<?php
+					($page == '' || $page == 'home') ? include INCLUDE_PATH . 'home.i.php' : '';
+					($page == 'aboutus') ? include INCLUDE_PATH . 'about.i.php' : '';
+					($page == 'contactus') ? include INCLUDE_PATH . 'contact.i.php' : '';
+					($page == 'items') ? include INCLUDE_PATH . 'items.i.php' : '';
+					($page == 'login') ? include INCLUDE_PATH . 'login.i.php' : '';
+					($page == 'cat') ? include INCLUDE_PATH . 'cat.i.php' : '';
+					
+					//print_r($_SESSION);
+				?>
+				
+			<!-- FOOTER BEGINS -->
+			<?php
+				include INCLUDE_PATH . 'footer.i.php';
+			?>
+			<!-- FOOTER ENDS -->
+			<hr />
+		</div>
+		<!-- CONTAINER ENDS -->
+		
+		
+		<!-- LINKS TO jquery.js bootstrap.min.js -->
+		<script type="text/javascript" src="<?php echo JS_PATH ?>jquery.js"></script>
+		<script type="text/javascript" src="<?php echo JS_PATH ?>bootstrap.min.js"></script>
+		
+	</body>
+	<!-- BODY OF THE PAGE ENDS -->
+</html>
